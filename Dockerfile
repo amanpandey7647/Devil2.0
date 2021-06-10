@@ -1,7 +1,7 @@
-FROM lucifeermorningstar/Devil:alpine
+FROM TeamExtremePro/ExtremeProUserbot:alpine
 
 #clonning repo 
-RUN git clone https://github.com/lucifeermorningstar/Devil.git /root/userbot
+RUN git clone https://github.com/TeamExtremePro/ExtremeProUserbot/.git /root/userbot
 #working directory 
 WORKDIR /root/userbot
 
