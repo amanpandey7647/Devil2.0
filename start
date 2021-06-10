@@ -4,29 +4,29 @@
 _get_repolink () {
     local regex
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "DEVIL" ]]
+    if [[ $UPSTREAM_REPO == "ExtremeProUserbot" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2x1Y2lmZWVybW9ybmluZ3N0YXIvRGV2aWwvYXJjaGl2ZS9tYXN0ZXIuemlw'" | base64 -d
-    elif [[ $UPSTREAM_REPO == "LEGEND" ]]
+        echo "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1FeHRyZW1lUHJvL0V4dHJlbWVQcm9Vc2VyYm90L2FyY2hpdmUvRXh0cmVtZS1Qcm8uemlw'" | base64 -d
+    elif [[ $UPSTREAM_REPO == "ExtremeProUserbot" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL0xFR0VORFhPUC9MRUdFTkQtQk9UL2FyY2hpdmUvbWFzdGVyLnppcA==" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1FeHRyZW1lUHJvL0V4dHJlbWVQcm9Vc2VyYm90L2FyY2hpdmUvRXh0cmVtZS1Qcm8uemlw==" | base64 -d
     elif [[ $UPSTREAM_REPO =~ $regex ]]
     then
         if [[ $UPSTREAM_REPO_BRANCH ]]
         then
             echo "${UPSTREAM_REPO}/archive/${UPSTREAM_REPO_BRANCH}.zip"
         else
-            echo "${UPSTREAM_REPO}/archive/master.zip"
+            echo "${UPSTREAM_REPO}/archive/Extreme-Pro.zip"
         fi
     else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2x1Y2lmZWVybW9ybmluZ3N0YXIvRGV2aWwvYXJjaGl2ZS9tYXN0ZXIuemlw" | base64 -d
+        echo "=>> Decoded Text : aHR0cHM6Ly9naXRodWIuY29tL1RlYW1FeHRyZW1lUHJvL0V4dHJlbWVQcm9Vc2VyYm90L2FyY2hpdmUvRXh0cmVtZS1Qcm8uemlw" | base64 -d
     fi
 }
 
 
 _set_bot () {
     local zippath
-    zippath="legendbot.zip"
+    zippath="ExtremeProUserbot.zip"
     echo "  Downloading source code ..."
     wget -q $(_get_repolink) -O "$zippath"
     echo "  Unpacking Data ..."
@@ -37,27 +37,13 @@ _set_bot () {
     rm -rf "$zippath"
     sleep 5
     cd $CATPATH
-    echo "    Starting DEVILBot    "
+    echo "    Starting EXTREME PRO USERBOT    "
     echo "
-                        :'######:::::'###::::'########::::
-                        '##... ##:::'## ##:::... ##..:::::
-                         ##:::..:::'##:. ##::::: ##:::::::
-                         ##:::::::'##:::. ##:::: ##:::::::
-                         ##::::::: #########:::: ##:::::::
-                         ##::: ##: ##.... ##:::: ##:::::::
-                        . ######:: ##:::: ##:::: ##:::::::
-                        :......:::..:::::..:::::..::::::::
+ EXTREME PRO USERBOT STARTING
     "
 
     echo "
-    '##::::'##::'######::'########:'########::'########:::'#######::'########:
-     ##:::: ##:'##... ##: ##.....:: ##.... ##: ##.... ##:'##.... ##:... ##..::
-     ##:::: ##: ##:::..:: ##::::::: ##:::: ##: ##:::: ##: ##:::: ##:::: ##::::
-     ##:::: ##:. ######:: ######::: ########:: ########:: ##:::: ##:::: ##::::
-     ##:::: ##::..... ##: ##...:::: ##.. ##::: ##.... ##: ##:::: ##:::: ##::::
-     ##:::: ##:'##::: ##: ##::::::: ##::. ##:: ##:::: ##: ##:::: ##:::: ##::::
-    . #######::. ######:: ########: ##:::. ##: ########::. #######::::: ##::::
-    :.......::::......:::........::..:::::..::........::::.......::::::..:::::
+TELETHON
     "
     python3 ../setup/updater.py ../requirements.txt requirements.txt
     python3 -m userbot
