@@ -7,6 +7,7 @@ WORKDIR /root/userbot
 
 # Install requirements
 RUN pip3 install -U -r requirements.txt
+RUN pip3 install EXTRE
 
 ENV PATH="/home/userbot/bin:$PATH"
 
