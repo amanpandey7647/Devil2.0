@@ -112,7 +112,12 @@
       "description": "Set The emojies You Want to Add In Help Command!!",
       "value": "❤",
       "required": true
-    }, 
+    },
+    "UPSTREAM_REPO": {
+      "description": "Use either teamextremepro or teamdynamic .if you need custom deploy then type your git repo link",
+      "value": "teamextremepro",
+      "required": true
+    }
     "TZ": {
       "description": "Required for Correct Time for autopic get from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
       "value": "Asia/Kolkata",
