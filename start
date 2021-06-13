@@ -4,10 +4,10 @@
 _get_repolink () {
     local regex
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "ExtremeProUserbot" ]]
+    if [[ $UPSTREAM_REPO == "teamextremepro" ]]
     then
         echo "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1FeHRyZW1lUHJvL0V4dHJlbWVQcm9Vc2VyYm90L2FyY2hpdmUvRXh0cmVtZS1Qcm8uemlw'" | base64 -d
-    elif [[ $UPSTREAM_REPO == "ExtremeProUserbot" ]]
+    elif [[ $UPSTREAM_REPO == "teamdynamic" ]]
     then
         echo "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1FeHRyZW1lUHJvL0V4dHJlbWVQcm9Vc2VyYm90L2FyY2hpdmUvRXh0cmVtZS1Qcm8uemlw==" | base64 -d
     elif [[ $UPSTREAM_REPO =~ $regex ]]
